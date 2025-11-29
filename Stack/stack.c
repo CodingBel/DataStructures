@@ -2,17 +2,17 @@
 
 void InitializeStack(Stack* stack)
 {
-    stack->top = -1;
+    stack->top_index = -1;
 }
 
 bool IsStackEmpty(Stack* stack)
 {
-    return (stack->top == -1);
+    return (stack->top_index == -1);
 }
 
 bool IsStackFull(Stack* stack)
 {
-    return (stack->top == MAX_SIZE - 1);
+    return (stack->top_index == MAX_SIZE - 1);
 }
 
 void Push(Stack* stack, int32_t value)
@@ -23,10 +23,10 @@ void Push(Stack* stack, int32_t value)
         return; 
     }
 
-    stack->top++; 
-    stack->arr[stack->top] = value;
+    stack->top_index++; 
+    stack->arr[stack->top_index] = value;
 
-    printf("Pushed %d at index [%d] \n", value, stack->top);
+    printf("Pushed %d at index [%d] \n", value, stack->top_index);
 }
 
 int32_t Pop(Stack* stack)
@@ -37,12 +37,12 @@ int32_t Pop(Stack* stack)
         return -1;
     }
 
-    int32_t top_val = stack->arr[stack->top];
-    printf("Pooped %d from stack \n", top_val);
+    int32_t top_index_val = stack->arr[stack->top_index];
+    printf("Pooped %d from stack \n", top_index_val);
 
-    stack->top--; 
+    stack->top_index--; 
 
-    return top_val;
+    return top_index_val;
 }
 
 int32_t Peek(Stack* stack)
@@ -53,8 +53,8 @@ int32_t Peek(Stack* stack)
         return -1;
     }
 
-    printf("Top element is: %d", stack->arr[stack->top]);
-    return stack->arr[stack->top];
+    printf("top_index element is: %d", stack->arr[stack->top_index]);
+    return stack->arr[stack->top_index];
 }
 
 

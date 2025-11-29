@@ -11,11 +11,11 @@ int main ()
         Push(&myStack, i * 10);
     }
 
-    printf("Top is: %d \n", Pop(&myStack));
+    printf("top_index is: %d \n", Pop(&myStack));
 
     Push(&myStack, 12);
 
-     printf("Top is: %d \n", Pop(&myStack));
+     printf("top_index is: %d \n", Pop(&myStack));
 
     return 0;
 }
